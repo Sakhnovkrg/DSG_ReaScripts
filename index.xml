@@ -1,23 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="58a3e39ba95bd0f35846aa1f39aa4cb2574295e1">
-  <category name="Example">
-    <reapack name="cfillion_Hello world.lua" type="script" desc="Hello world">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 This is an example of a package file. It installs itself as a ReaScript that does nothing but show "Hello World!" in REAPER's scripting console.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Packages may also include additional files specified using the @provides tag.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 This text is the documentation shown when using ReaPack's "About this package" feature. {\field{\*\fldinst{HYPERLINK "https://commonmark.org/"}}{\fldrslt{\ul
-Markdown
-}}}
- {\i formatting} is supported.\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="cfillion" time="2021-01-04T23:30:32Z">
-        <source main="main">https://github.com/cfillion/reapack-repository-template/raw/58a3e39ba95bd0f35846aa1f39aa4cb2574295e1/Example/cfillion_Hello%20world.lua</source>
+<index version="1" name="DSG ReaScripts" commit="a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a">
+  <category name="Arm">
+    <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Arm/DSG_Solo%20Arm.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Toggle Solo Arm.lua" type="script" desc="DSG_Toggle Solo Arm">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Arm/DSG_Toggle%20Solo%20Arm.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Color">
+    <reapack name="DSG_Mousewheel based colorizer.lua" type="script" desc="DSG_Mousewheel based colorizer">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Color/DSG_Mousewheel%20based%20colorizer.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Pick up color.lua" type="script" desc="DSG_Pick up color">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Color/DSG_Pick%20up%20color.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="FX Browser">
+    <reapack name="DSG_Autohide FX Browser like FL Studio Browser.lua" type="script" desc="DSG_AutoHide FX Browser like FL Studio">
+      <version name="1.5" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/FX%20Browser/DSG_Autohide%20FX%20Browser%20like%20FL%20Studio%20Browser.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Items Editing">
+    <reapack name="DSG_Replace sample.lua" type="script" desc="DSG_Replace sample">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Items%20Editing/DSG_Replace%20sample.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Media Explorer">
+    <reapack name="DSG_AutoHide MediaExplorer Like FL Studio.lua" type="script" desc="DSG_AutoHide MediaExplorer like FL Studio">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Media%20Explorer/DSG_AutoHide%20MediaExplorer%20Like%20FL%20Studio.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Rendering">
+    <reapack name="DSG_Render time selection to new track.lua" type="script" desc="DSG_Render time selection to new track">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Rendering/DSG_Render%20time%20selection%20to%20new%20track.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Sound Generation">
+    <reapack name="DSG_Whoosh.lua" type="script" desc="DSG_Whoosh">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Sound%20Generation/DSG_Whoosh.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="UI">
+    <reapack name="DSG_Out volume fader.lua" type="script" desc="DSG_Out volume fader">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/UI/DSG_Out%20volume%20fader.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="VKB">
+    <reapack name="DSG_Smart VKB 2.lua" type="script" desc="DSG_Smart VKB 2">
+      <version name="1.1.4" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_Smart%20VKB%202.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Smart VKB.lua" type="script" desc="DSG_Smart VKB">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_Smart%20VKB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_VKB Helper.lua" type="script" desc="DSG_VKB helper">
+      <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_VKB%20Helper.lua</source>
       </version>
     </reapack>
   </category>
@@ -26,29 +88,18 @@ Markdown
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaPack Repository Template\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 A template for GitHub-hosted ReaPack repositories with automated {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reapack-index"}}{\fldrslt{\ul
-reapack-index
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaScripts by DSG\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Import\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/master/index.xml}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Links\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://vk.com/alexdsg"}}{\fldrslt{\ul
+VK
 }}}
- running from GitHub Actions.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Replace the name of the repository in {\field{\*\fldinst{HYPERLINK "/index.xml"}}{\fldrslt{\ul
-index.xml
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://www.buymeacoffee.com/dsgdnb"}}{\fldrslt{\ul
+Donate
 }}}
- when using this template. This will be the name shown in ReaPack.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \f1 <index version="1" name="Name of your repository here">\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Replace the contents of this file ({\field{\*\fldinst{HYPERLINK "/README.md"}}{\fldrslt{\ul
-README.md
-}}}
-). This will be the text shown when using ReaPack's "About this repository" feature.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 reapack-index looks for package files in subfolders. The folder tree represents the package categories shown in ReaPack.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Each package file is expected to begin with a metadata header. See {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reapack-index/wiki/Packaging-Documentation"}}{\fldrslt{\ul
-Packaging Documentation
-}}}
- on reapack-index's wiki.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The URL to import in ReaPack is {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reapack-repository-template/raw/master/index.xml"}}{\fldrslt{\ul
-https://github.com/{\f1 <your username>}/{\f1 <repository name>}/raw/master/index.xml
-}}}
-.\par}
+\par}
 }
 ]]></description>
   </metadata>
