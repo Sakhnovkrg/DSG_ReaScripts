@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a">
+<index version="1" name="DSG ReaScripts" commit="a21feb55f7bd137033bf8b48058389265a1e467e">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -49,6 +49,13 @@
     <reapack name="DSG_Render time selection to new track.lua" type="script" desc="DSG_Render time selection to new track">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Rendering/DSG_Render%20time%20selection%20to%20new%20track.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Sidechain">
+    <reapack name="DSG_Create audio sidechain from selected tracks to track under mouse cursor.lua" type="script" desc="DSG_Create audio sidechain from selected tracks to track under mouse cursor">
+      <version name="1.0" author="DSG" time="2022-04-23T05:36:14Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a21feb55f7bd137033bf8b48058389265a1e467e/Sidechain/DSG_Create%20audio%20sidechain%20from%20selected%20tracks%20to%20track%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
   </category>
