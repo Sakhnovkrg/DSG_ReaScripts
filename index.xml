@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="1a28ffb937d1953c535f1bce253fc765fbe85dd9">
+<index version="1" name="DSG ReaScripts" commit="7e1461e1c2e2ee67da4418ffb09a8e76d64e20b6">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -76,6 +76,9 @@
       </version>
       <version name="1.2" author="DSG" time="2022-04-23T12:15:53Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/1a28ffb937d1953c535f1bce253fc765fbe85dd9/UI/DSG_Out%20volume%20fader.lua</source>
+      </version>
+      <version name="1.3" author="DSG" time="2022-04-26T20:40:43Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/7e1461e1c2e2ee67da4418ffb09a8e76d64e20b6/UI/DSG_Out%20volume%20fader.lua</source>
       </version>
     </reapack>
   </category>
