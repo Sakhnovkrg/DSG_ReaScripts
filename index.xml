@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="348a0d5f291cb8356e7ffd3b80f075f984501aae">
+<index version="1" name="DSG ReaScripts" commit="47ea8c85efcd0602cccc8a27f85e93f5e05f132b">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -83,14 +83,6 @@
     </reapack>
   </category>
   <category name="VKB">
-    <reapack name="DSG_Automatic send all input to VKB.lua" type="script" desc="DSG_Automatic send all input to VKB.lua">
-      <version name="1.0" author="DSG" time="2022-05-04T17:31:31Z">
-        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/7c86d82b742932e1abd269c09e1df4ef01a4e26e/VKB/DSG_Automatic%20send%20all%20input%20to%20VKB.lua</source>
-      </version>
-      <version name="1.1" author="DSG" time="2022-05-04T17:31:44Z">
-        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/348a0d5f291cb8356e7ffd3b80f075f984501aae/VKB/DSG_Automatic%20send%20all%20input%20to%20VKB.lua</source>
-      </version>
-    </reapack>
     <reapack name="DSG_Smart VKB 2.lua" type="script" desc="DSG_Smart VKB 2">
       <version name="1.1.4" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_Smart%20VKB%202.lua</source>
