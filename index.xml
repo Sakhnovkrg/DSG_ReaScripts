@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="7e1461e1c2e2ee67da4418ffb09a8e76d64e20b6">
+<index version="1" name="DSG ReaScripts" commit="be2319a851e7e95d1f00a3274fa42d5fc705a027">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -91,6 +91,11 @@
     <reapack name="DSG_Smart VKB.lua" type="script" desc="DSG_Smart VKB">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_Smart%20VKB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Script: DSG_Create audio sidechain from selected tracks to track under mouse cursor.lua" type="script" desc="DSG_Automatic send all input to VKB.lua">
+      <version name="1.0" author="DSG" time="2022-05-04T17:21:03Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/be2319a851e7e95d1f00a3274fa42d5fc705a027/VKB/Script:%20DSG_Create%20audio%20sidechain%20from%20selected%20tracks%20to%20track%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
   </category>
