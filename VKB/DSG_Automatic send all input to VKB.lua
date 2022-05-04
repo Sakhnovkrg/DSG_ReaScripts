@@ -1,6 +1,6 @@
 --[[
 Description: DSG_Automatic send all input to VKB.lua
-Version: 1.0
+Version: 1.1
 Author: DSG
 --]]
 
