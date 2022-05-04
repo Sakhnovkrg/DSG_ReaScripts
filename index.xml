@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="47ea8c85efcd0602cccc8a27f85e93f5e05f132b">
+<index version="1" name="DSG ReaScripts" commit="8f388dcd4ccbf99dd435fed0fb046b4d79ee28f7">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -83,6 +83,11 @@
     </reapack>
   </category>
   <category name="VKB">
+    <reapack name="DSG_Automatic send all input to VKB.lua" type="script" desc="DSG_Automatic send all input to VKB">
+      <version name="1.3" author="DSG" time="2022-05-04T17:38:43Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/8f388dcd4ccbf99dd435fed0fb046b4d79ee28f7/VKB/DSG_Automatic%20send%20all%20input%20to%20VKB.lua</source>
+      </version>
+    </reapack>
     <reapack name="DSG_Smart VKB 2.lua" type="script" desc="DSG_Smart VKB 2">
       <version name="1.1.4" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/VKB/DSG_Smart%20VKB%202.lua</source>
