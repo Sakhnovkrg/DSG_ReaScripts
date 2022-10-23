@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="8f388dcd4ccbf99dd435fed0fb046b4d79ee28f7">
+<index version="1" name="DSG ReaScripts" commit="1331d824eb08fde0d81bedc32000eeded2afd672">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -46,6 +46,11 @@
     </reapack>
   </category>
   <category name="Rendering">
+    <reapack name="DSG_Offliner.lua" type="script" desc="DSG_Offliner">
+      <version name="1.0" author="DSG" time="2022-10-23T09:13:00Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/1331d824eb08fde0d81bedc32000eeded2afd672/Rendering/DSG_Offliner.lua</source>
+      </version>
+    </reapack>
     <reapack name="DSG_Render time selection to new track.lua" type="script" desc="DSG_Render time selection to new track">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Rendering/DSG_Render%20time%20selection%20to%20new%20track.lua</source>
