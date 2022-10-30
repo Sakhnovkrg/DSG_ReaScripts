@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="1331d824eb08fde0d81bedc32000eeded2afd672">
+<index version="1" name="DSG ReaScripts" commit="2e33d4f36e6acd8602b74a40049035a89e6dc179">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -42,6 +42,13 @@
     <reapack name="DSG_AutoHide MediaExplorer Like FL Studio.lua" type="script" desc="DSG_AutoHide MediaExplorer like FL Studio">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Media%20Explorer/DSG_AutoHide%20MediaExplorer%20Like%20FL%20Studio.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MIDI Editor">
+    <reapack name="DSG_Duplicate selected midi events.lua" type="script" desc="DSG_Duplicate selected midi events">
+      <version name="1.0" author="DSG" time="2022-10-30T18:16:39Z">
+        <source main="midi_editor">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/2e33d4f36e6acd8602b74a40049035a89e6dc179/MIDI%20Editor/DSG_Duplicate%20selected%20midi%20events.lua</source>
       </version>
     </reapack>
   </category>
