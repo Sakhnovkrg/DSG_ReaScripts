@@ -1,6 +1,6 @@
 --[[
 Description: DSG_Send audio of selected tracks to sidechain bus
-Version: 1.1
+Version: 1.2
 Author: DSG
 --]]
 
@@ -59,10 +59,9 @@ for i = 0, numSelectedTracks - 1 do
     end
     
     if(createSendFlag == true) then
-      local chCount = reaper.GetMediaTrackInfo_Value(tr, 'I_NCHAN')
       local send = reaper.CreateTrackSend(tr, sidechainTrack)
  
-      reaper.SetMediaTrackInfo_Value( tr, 'B_MAINSEND', 0)
+      reaper.SetMediaTrackInfo_Value(tr, 'B_MAINSEND', 0)
     end
     
     ::continue::
