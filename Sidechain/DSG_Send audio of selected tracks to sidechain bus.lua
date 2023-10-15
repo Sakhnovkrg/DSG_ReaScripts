@@ -1,6 +1,6 @@
 --[[
 Description: DSG_Send audio of selected tracks to sidechain bus
-Version: 1.0
+Version: 1.1
 Author: DSG
 --]]
 
@@ -52,7 +52,6 @@ for i = 0, numSelectedTracks - 1 do
     
     for i = 0, reaper.GetTrackNumSends(tr, 0) - 1 do
         local destTrack = reaper.GetTrackSendInfo_Value(tr, 0, i, 'P_DESTTRACK')
-        local destChan = reaper.GetTrackSendInfo_Value(tr, 0, i+1, 'I_DSTCHAN')
         
         if(destTrack == sidechainTrack) then
           createSendFlag = false
