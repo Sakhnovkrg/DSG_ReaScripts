@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="2e33d4f36e6acd8602b74a40049035a89e6dc179">
+<index version="1" name="DSG ReaScripts" commit="a69aca6890edc39e3903a4d006de5ffc1f8d9a74">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -68,6 +68,11 @@
     <reapack name="DSG_Create audio sidechain from selected tracks to track under mouse cursor.lua" type="script" desc="DSG_Create audio sidechain from selected tracks to track under mouse cursor">
       <version name="1.0" author="DSG" time="2022-04-23T05:36:14Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a21feb55f7bd137033bf8b48058389265a1e467e/Sidechain/DSG_Create%20audio%20sidechain%20from%20selected%20tracks%20to%20track%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Send audio of selected tracks to sidechain bus.lua" type="script" desc="DSG_Send audio of selected tracks to sidechain bus">
+      <version name="1.0" author="DSG" time="2023-10-15T18:24:53Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a69aca6890edc39e3903a4d006de5ffc1f8d9a74/Sidechain/DSG_Send%20audio%20of%20selected%20tracks%20to%20sidechain%20bus.lua</source>
       </version>
     </reapack>
   </category>
