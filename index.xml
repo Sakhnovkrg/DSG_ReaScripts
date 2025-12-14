@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="155b037a38ea74a6ecb13a9db8285c8253092c5e">
+<index version="1" name="DSG ReaScripts" commit="cae3f050ded16034065e91cf0eb811fa2fa7bba2">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -90,6 +90,11 @@
     </reapack>
   </category>
   <category name="UI">
+    <reapack name="DSG_Easy Theme Tweaker.lua" type="script" desc="DSG_Easy Theme Tweaker">
+      <version name="0.1" author="DSG" time="2025-12-14T13:32:09Z">
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/cae3f050ded16034065e91cf0eb811fa2fa7bba2/UI/DSG_Easy%20Theme%20Tweaker.lua</source>
+      </version>
+    </reapack>
     <reapack name="DSG_Out volume fader.lua" type="script" desc="DSG_Out volume fader">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/UI/DSG_Out%20volume%20fader.lua</source>
