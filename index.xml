@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="cae3f050ded16034065e91cf0eb811fa2fa7bba2">
+<index version="1" name="DSG ReaScripts" commit="f759a807b6f5542a72082fcda535209f0e4388a6">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -32,6 +32,27 @@
     </reapack>
   </category>
   <category name="Items Editing">
+    <reapack name="DSG_Cartridge create track from Media Item.lua" type="script" desc="DSG_Cartridge create track from Media Item">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Cartridge - Create track from Media Item\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a new track with Cartridge sampler and loads the sample from the selected media item.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.2.7+\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/sakhnovkrg/DSG_ReaScripts">Repository</link>
+      </metadata>
+      <version name="1.0.0" author="Alexandr Sakhnov" time="2026-02-03T18:33:45Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/f759a807b6f5542a72082fcda535209f0e4388a6/Items%20Editing/DSG_Cartridge%20create%20track%20from%20Media%20Item.lua</source>
+      </version>
+    </reapack>
     <reapack name="DSG_Replace sample.lua" type="script" desc="DSG_Replace sample">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Items%20Editing/DSG_Replace%20sample.lua</source>
@@ -42,6 +63,54 @@
     <reapack name="DSG_AutoHide MediaExplorer Like FL Studio.lua" type="script" desc="DSG_AutoHide MediaExplorer like FL Studio">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/a03ffaed580e7e54aebd10a3d2e84dbc0024fd9a/Media%20Explorer/DSG_AutoHide%20MediaExplorer%20Like%20FL%20Studio.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Cartridge create track from Media Explorer.lua" type="script" desc="DSG_Cartridge create track from Media Explorer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Cartridge - Create track from Media Explorer\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a new track with Cartridge sampler and loads the selected file from Media Explorer. If nothing is selected, opens a file dialog.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.2.7+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab js_ReaScriptAPI extension\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/sakhnovkrg/DSG_ReaScripts">Repository</link>
+      </metadata>
+      <version name="1.0.0" author="Alexandr Sakhnov" time="2026-02-03T18:33:45Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/f759a807b6f5542a72082fcda535209f0e4388a6/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
+      </version>
+    </reapack>
+    <reapack name="DSG_Cartridge load sample to active instance.lua" type="script" desc="DSG_Cartridge load sample to active instance">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Cartridge - Load sample to active instance\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Loads the selected file from Media Explorer into the currently focused Cartridge instance. Similar to ReaSamplOmatic's "Reuse Active Sample player" action.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Usage:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open Cartridge on any track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Select a file in Media Explorer\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Run this script\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.2.7+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab js_ReaScriptAPI extension\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/sakhnovkrg/DSG_ReaScripts">Repository</link>
+      </metadata>
+      <version name="1.0.0" author="Alexandr Sakhnov" time="2026-02-03T18:33:45Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/f759a807b6f5542a72082fcda535209f0e4388a6/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
       </version>
     </reapack>
   </category>
