@@ -1,8 +1,13 @@
 -- @description DSG_Cartridge load sample to active instance
 -- @author Alexandr Sakhnov
--- @version 1.0.0
+-- @version 1.1.0
 -- @changelog
---   Initial release
+--   v1.1.0
+--   - Apply Media Explorer preview selection as trim region
+--   - Improved database and search results path resolution
+--   - Localization support (Russian Media Explorer window name)
+--   v1.0.0
+--   - Initial release
 -- @link Website https://dsgdnb.com
 -- @link Repository https://github.com/sakhnovkrg/DSG_ReaScripts
 -- @about
@@ -21,7 +26,7 @@
 --   - Auto-copies samples to project's Audio folder (if project is saved)
 --
 --   **Requirements:**
---   - Cartridge 0.2.7+
+--   - Cartridge 0.3.1+
 --   - js_ReaScriptAPI extension
 
 local PLUGIN_NAME = "Cartridge"
@@ -71,9 +76,32 @@ local function copyToProject(source, proj_path)
     return dest
 end
 
+local ME_WINDOW_NAMES = {"Media Explorer", "Медиа-браузер"}
+
+local function findMediaExplorer()
+    for _, name in ipairs(ME_WINDOW_NAMES) do
+        local hwnd = reaper.JS_Window_Find(name, true)
+        if hwnd then return hwnd end
+        hwnd = reaper.JS_Window_FindChild(reaper.GetMainHwnd(), name, true)
+        if hwnd then return hwnd end
+    end
+    return nil
+end
+
+local function is_absolute_path(s)
+    return s and (s:match("^%a:[\\/]") or s:match("^/")) and #s > 1
+end
+
+local function get_path_from_list_item(list, idx)
+    for col = 0, 4 do
+        local s = reaper.JS_ListView_GetItemText(list, idx, col)
+        if is_absolute_path(s) then return s end
+    end
+    return nil
+end
+
 local function getMediaExplorerFile()
-    local hwnd = reaper.JS_Window_Find("Media Explorer", true)
-        or reaper.JS_Window_FindChild(reaper.GetMainHwnd(), "Media Explorer", true)
+    local hwnd = findMediaExplorer()
     if not hwnd then return nil end
 
     local list = reaper.JS_Window_FindChildByID(hwnd, 1001)
@@ -91,40 +119,31 @@ local function getMediaExplorerFile()
 
     local filename = reaper.JS_ListView_GetItemText(list, idx, 0)
 
+    -- Check if any column already has an absolute path
+    if is_absolute_path(filename) then return filename end
+    local path_any_col = get_path_from_list_item(list, idx)
+    if path_any_col then return path_any_col end
+
     local dir = ""
     local edit = reaper.JS_Window_FindChildByID(hwnd, 1002)
-    if edit then dir = reaper.JS_Window_GetTitle(edit) end
+    if edit then dir = reaper.JS_Window_GetTitle(edit) or "" end
     if dir == "" then
         local combo = reaper.JS_Window_FindChildByID(hwnd, 1000)
-        if combo then dir = reaper.JS_Window_GetTitle(combo) end
+        if combo then dir = reaper.JS_Window_GetTitle(combo) or "" end
     end
 
-    -- Handle DB paths by enabling "Show full path" option
-    if dir:match("^DB:%s*") then
-        -- Check if first column already has full path (option already on)
-        local first_check = reaper.JS_ListView_GetItemText(list, idx, 0)
-        if first_check and (first_check:match("^%a:[\\/]") or first_check:match("^/")) then
-            return first_check
-        end
-
-        -- Toggle "Show full path in databases" ON
+    -- Database or search results: force "Show full path" and read from all columns
+    local looks_like_folder = dir:match("[\\/]") and not dir:match("^DB") and not dir:match("^Search")
+    if not looks_like_folder or dir == "" then
         reaper.JS_WindowMessage_Send(hwnd, "WM_COMMAND", 42026, 0, 0, 0)
-
-        -- Re-read filename (now should be full path)
-        local full_path = reaper.JS_ListView_GetItemText(list, idx, 0)
-
-        -- Toggle back OFF (restore original state)
+        local full_path = get_path_from_list_item(list, idx)
         reaper.JS_WindowMessage_Send(hwnd, "WM_COMMAND", 42026, 0, 0, 0)
-
-        if full_path and (full_path:match("^%a:[\\/]") or full_path:match("^/")) then
-            return full_path
-        end
-        return nil
+        if full_path then return full_path end
     end
 
-    if filename:match("^%a:") or filename:match("^/") then
-        return filename
-    end
+    -- Normal folder: combine path + filename
+    if is_absolute_path(filename) then return filename end
+    if dir == "" then return nil end
     if dir:sub(-1) ~= "/" and dir:sub(-1) ~= "\\" then dir = dir .. "/" end
     return dir .. filename
 end
@@ -155,6 +174,39 @@ local function triggerLoad(track, fx_idx, sample_path)
             local val = reaper.TrackFX_GetParam(track, fx_idx, i)
             reaper.TrackFX_SetParam(track, fx_idx, i, val < 0.5 and 1 or 0)
             break
+        end
+    end
+end
+
+local function getMediaExplorerSelection(sample_path)
+    if not reaper.MediaExplorerGetLastPlayedFileInfo then return nil, nil end
+
+    local ok, out_path, _, sel_start, sel_end = reaper.MediaExplorerGetLastPlayedFileInfo("", 0, 0, 0, 0, 0, 0, 0, 0, "", 0)
+    if not ok or not out_path or out_path == "" then return nil, nil end
+
+    -- Normalize paths for comparison
+    local norm_a = sample_path:gsub("\\", "/"):lower()
+    local norm_b = out_path:gsub("\\", "/"):lower()
+    if norm_a ~= norm_b then return nil, nil end
+
+    if type(sel_start) ~= "number" or type(sel_end) ~= "number" then return nil, nil end
+    if sel_start < 0 or sel_start >= sel_end or sel_end > 1 then return nil, nil end
+
+    return sel_start, sel_end
+end
+
+local function applySelectionAsTrim(track, fx_idx, sel_start, sel_end)
+    if not sel_start or not sel_end then return end
+
+    for i = 0, reaper.TrackFX_GetNumParams(track, fx_idx) - 1 do
+        local _, name = reaper.TrackFX_GetParamName(track, fx_idx, i, "")
+        if name == "Sample Start" then
+            reaper.TrackFX_SetParam(track, fx_idx, i, sel_start)
+        elseif name == "Sample End" then
+            reaper.TrackFX_SetParam(track, fx_idx, i, sel_end)
+        elseif name == "Zoom To Fit" then
+            local val = reaper.TrackFX_GetParam(track, fx_idx, i)
+            reaper.TrackFX_SetParam(track, fx_idx, i, val < 0.5 and 1 or 0)
         end
     end
 end
@@ -230,12 +282,17 @@ local function main()
         return
     end
 
+    local original_path = sample_path
     local proj_path = getProjectPath()
     if proj_path then
         sample_path = copyToProject(sample_path, proj_path)
     end
 
     triggerLoad(track, fx_idx, sample_path)
+
+    -- Apply Media Explorer preview selection as trim
+    local sel_start, sel_end = getMediaExplorerSelection(original_path)
+    applySelectionAsTrim(track, fx_idx, sel_start, sel_end)
 end
 
 main()
