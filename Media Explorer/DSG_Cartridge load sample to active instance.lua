@@ -1,7 +1,9 @@
 -- @description DSG_Cartridge load sample to active instance
 -- @author Alexandr Sakhnov
--- @version 1.1.0
+-- @version 1.2.0
 -- @changelog
+--   v1.2.0
+--   - Removed auto-copy to project folder (plugin now embeds sample data in state)
 --   v1.1.0
 --   - Apply Media Explorer preview selection as trim region
 --   - Improved database and search results path resolution
@@ -22,59 +24,11 @@
 --   2. Select a file in Media Explorer
 --   3. Run this script
 --
---   **Features:**
---   - Auto-copies samples to project's Audio folder (if project is saved)
---
 --   **Requirements:**
 --   - Cartridge 0.3.1+
 --   - js_ReaScriptAPI extension
 
 local PLUGIN_NAME = "Cartridge"
-local COPY_TO_PROJECT = true
-
-local function getProjectPath()
-    if not COPY_TO_PROJECT then return nil end
-    local path = reaper.GetProjectPath("")
-    return path ~= "" and path or nil
-end
-
-local function copyToProject(source, proj_path)
-    if not proj_path then return source end
-
-    local audio_dir = proj_path .. "/Audio"
-    reaper.RecursiveCreateDirectory(audio_dir, 0)
-
-    local filename = source:match("([^\\/]+)$")
-    if not filename then return source end
-
-    if source:gsub("\\", "/"):lower():find(proj_path:gsub("\\", "/"):lower(), 1, true) then
-        return source
-    end
-
-    local dest = audio_dir .. "/" .. filename
-    if io.open(dest, "rb") then
-        local base, ext = filename:match("(.+)(%.[^.]+)$")
-        base = base or filename
-        ext = ext or ""
-        local i = 1
-        while io.open(dest, "rb") do
-            dest = audio_dir .. "/" .. base .. "_" .. i .. ext
-            i = i + 1
-        end
-    end
-
-    local src = io.open(source, "rb")
-    if not src then return source end
-    local content = src:read("*all")
-    src:close()
-
-    local dst = io.open(dest, "wb")
-    if not dst then return source end
-    dst:write(content)
-    dst:close()
-
-    return dest
-end
 
 local ME_WINDOW_NAMES = {"Media Explorer", "Медиа-браузер"}
 
@@ -282,16 +236,10 @@ local function main()
         return
     end
 
-    local original_path = sample_path
-    local proj_path = getProjectPath()
-    if proj_path then
-        sample_path = copyToProject(sample_path, proj_path)
-    end
-
     triggerLoad(track, fx_idx, sample_path)
 
     -- Apply Media Explorer preview selection as trim
-    local sel_start, sel_end = getMediaExplorerSelection(original_path)
+    local sel_start, sel_end = getMediaExplorerSelection(sample_path)
     applySelectionAsTrim(track, fx_idx, sel_start, sel_end)
 end
 
