@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="302873403f3e065f5c853be525e228994710c94d">
+<index version="1" name="DSG ReaScripts" commit="5052f9fcdcf35e4044cd3c9988407f7cfbc116f9">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -40,8 +40,6 @@
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Cartridge - Create track from Media Item\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Creates a new track with Cartridge sampler and loads the sample from the selected media item.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.2.7+\sa180\par}
 }
@@ -51,6 +49,13 @@
       <version name="1.0.0" author="Alexandr Sakhnov" time="2026-02-03T18:33:45Z">
         <changelog><![CDATA[Initial release]]></changelog>
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/f759a807b6f5542a72082fcda535209f0e4388a6/Items%20Editing/DSG_Cartridge%20create%20track%20from%20Media%20Item.lua</source>
+      </version>
+      <version name="1.1.0" author="Alexandr Sakhnov" time="2026-02-10T14:01:38Z">
+        <changelog><![CDATA[v1.1.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Items%20Editing/DSG_Cartridge%20create%20track%20from%20Media%20Item.lua</source>
       </version>
     </reapack>
     <reapack name="DSG_Replace sample.lua" type="script" desc="DSG_Replace sample">
@@ -73,8 +78,6 @@
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Cartridge - Create track from Media Explorer\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Creates a new track with Cartridge sampler and loads the selected file from Media Explorer. If nothing is selected, opens a file dialog.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.3.1+\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab js_ReaScriptAPI extension\sa180\par}
@@ -95,6 +98,17 @@ v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/302873403f3e065f5c853be525e228994710c94d/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
       </version>
+      <version name="1.2.0" author="Alexandr Sakhnov" time="2026-02-10T14:01:38Z">
+        <changelog><![CDATA[v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
+      </version>
     </reapack>
     <reapack name="DSG_Cartridge load sample to active instance.lua" type="script" desc="DSG_Cartridge load sample to active instance">
       <metadata>
@@ -108,8 +122,6 @@ v1.0.0
 {\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open Cartridge on any track\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Select a file in Media Explorer\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Run this script\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b Features:}\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Auto-copies samples to project's Audio folder (if project is saved)\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\b Requirements:}\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Cartridge 0.3.1+\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab js_ReaScriptAPI extension\sa180\par}
@@ -129,6 +141,17 @@ v1.0.0
 v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/302873403f3e065f5c853be525e228994710c94d/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
+      </version>
+      <version name="1.2.0" author="Alexandr Sakhnov" time="2026-02-10T14:01:38Z">
+        <changelog><![CDATA[v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
       </version>
     </reapack>
   </category>
