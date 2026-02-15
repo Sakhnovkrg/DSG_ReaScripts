@@ -6,4 +6,4 @@
 ## Links
 [VK](https://vk.com/alexdsg)
 
-[Donate](https://www.buymeacoffee.com/dsgdnb)
+[Donate](https://boosty.to/dsgdnb/donate)
