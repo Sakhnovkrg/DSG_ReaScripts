@@ -1,7 +1,9 @@
 -- @description DSG_Cartridge create track from Media Explorer
 -- @author Alexandr Sakhnov
--- @version 1.2.0
+-- @version 1.2.1
 -- @changelog
+--   v1.2.1
+--   - Fixed Linux config path (~/.config instead of ~/.local)
 --   v1.2.0
 --   - Removed auto-copy to project folder (plugin now embeds sample data in state)
 --   v1.1.0
@@ -104,7 +106,7 @@ local function triggerLoad(track, fx_idx, sample_path)
             appdata = home .. "/Library/Application Support"
         else
             -- Linux
-            appdata = home .. "/.local"
+            appdata = home .. "/.config"
         end
     end
     local dir = appdata .. "/Cartridge"
