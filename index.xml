@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="5052f9fcdcf35e4044cd3c9988407f7cfbc116f9">
+<index version="1" name="DSG ReaScripts" commit="8e08c972bca4a77622c782ae3f5c78dad7700928">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -57,6 +57,15 @@ v1.0.0
 - Initial release]]></changelog>
         <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Items%20Editing/DSG_Cartridge%20create%20track%20from%20Media%20Item.lua</source>
       </version>
+      <version name="1.1.1" author="Alexandr Sakhnov" time="2026-03-01T18:11:24Z">
+        <changelog><![CDATA[v1.1.1
+- Fixed Linux config path (~/.config instead of ~/.local)
+v1.1.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="main">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/8e08c972bca4a77622c782ae3f5c78dad7700928/Items%20Editing/DSG_Cartridge%20create%20track%20from%20Media%20Item.lua</source>
+      </version>
     </reapack>
     <reapack name="DSG_Replace sample.lua" type="script" desc="DSG_Replace sample">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -109,6 +118,19 @@ v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
       </version>
+      <version name="1.2.1" author="Alexandr Sakhnov" time="2026-03-01T18:11:24Z">
+        <changelog><![CDATA[v1.2.1
+- Fixed Linux config path (~/.config instead of ~/.local)
+v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/8e08c972bca4a77622c782ae3f5c78dad7700928/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
+      </version>
     </reapack>
     <reapack name="DSG_Cartridge load sample to active instance.lua" type="script" desc="DSG_Cartridge load sample to active instance">
       <metadata>
@@ -152,6 +174,19 @@ v1.1.0
 v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/5052f9fcdcf35e4044cd3c9988407f7cfbc116f9/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
+      </version>
+      <version name="1.2.1" author="Alexandr Sakhnov" time="2026-03-01T18:11:24Z">
+        <changelog><![CDATA[v1.2.1
+- Fixed Linux config path (~/.config instead of ~/.local)
+v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/8e08c972bca4a77622c782ae3f5c78dad7700928/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
       </version>
     </reapack>
   </category>
