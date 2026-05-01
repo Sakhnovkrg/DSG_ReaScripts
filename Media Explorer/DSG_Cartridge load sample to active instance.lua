@@ -1,7 +1,11 @@
 -- @description DSG_Cartridge load sample to active instance
 -- @author Alexandr Sakhnov
--- @version 1.2.1
+-- @version 1.3.0
 -- @changelog
+--   v1.3.0
+--   - Locate Media Explorer via reaper.OpenMediaExplorer (works on any REAPER locale)
+--   - Fix "File not found" when Media Explorer hides the file extension: scan folder by base name
+--   - Use reaper.file_exists for the existence check (replaces io.open probe)
 --   v1.2.1
 --   - Fixed Linux config path (~/.config instead of ~/.local)
 --   v1.2.0
@@ -32,20 +36,53 @@
 
 local PLUGIN_NAME = "Cartridge"
 
-local ME_WINDOW_NAMES = {"Media Explorer", "Медиа-браузер"}
-
+-- Returns the Media Explorer hwnd; opens the window if it isn't already shown.
+-- Locale-agnostic, replaces the old hardcoded window-name lookup.
 local function findMediaExplorer()
-    for _, name in ipairs(ME_WINDOW_NAMES) do
-        local hwnd = reaper.JS_Window_Find(name, true)
-        if hwnd then return hwnd end
-        hwnd = reaper.JS_Window_FindChild(reaper.GetMainHwnd(), name, true)
-        if hwnd then return hwnd end
-    end
-    return nil
+    return reaper.OpenMediaExplorer("", false)
 end
 
 local function is_absolute_path(s)
     return s and (s:match("^%a:[\\/]") or s:match("^/")) and #s > 1
+end
+
+local function file_exists(path)
+    return path and reaper.file_exists(path)
+end
+
+local function basename_without_ext(name)
+    return name and (name:match("(.+)%.[^.]+$") or name)
+end
+
+-- Resolve the on-disk path when Media Explorer omits the file extension
+-- (e.g. "Show file extensions" disabled, or DB display name without ext).
+local function resolve_file_in_dir(dir, filename)
+    if not dir or dir == "" or not filename or filename == "" then return nil end
+    if dir:sub(-1) ~= "/" and dir:sub(-1) ~= "\\" then dir = dir .. "/" end
+
+    local candidate = dir .. filename
+    if file_exists(candidate) then return candidate end
+
+    local target = basename_without_ext(filename):lower()
+    local audio_ext = { wav = true, wave = true, flac = true, aif = true,
+                        aiff = true, mp3 = true, ogg = true }
+
+    local first_match
+    local i = 0
+    while true do
+        local entry = reaper.EnumerateFiles(dir, i)
+        if not entry then break end
+
+        if basename_without_ext(entry):lower() == target then
+            local path = dir .. entry
+            local ext = entry:match("%.([^.]+)$")
+            if ext and audio_ext[ext:lower()] and file_exists(path) then return path end
+            if not first_match and file_exists(path) then first_match = path end
+        end
+        i = i + 1
+    end
+
+    return first_match
 end
 
 local function get_path_from_list_item(list, idx)
@@ -97,11 +134,12 @@ local function getMediaExplorerFile()
         if full_path then return full_path end
     end
 
-    -- Normal folder: combine path + filename
+    -- Normal folder: combine path + filename, falling back to a folder scan
+    -- when the Media Explorer item text omits the file extension.
     if is_absolute_path(filename) then return filename end
     if dir == "" then return nil end
     if dir:sub(-1) ~= "/" and dir:sub(-1) ~= "\\" then dir = dir .. "/" end
-    return dir .. filename
+    return resolve_file_in_dir(dir, filename) or dir .. filename
 end
 
 local function triggerLoad(track, fx_idx, sample_path)
@@ -233,7 +271,7 @@ local function main()
         return
     end
 
-    if not io.open(sample_path, "rb") then
+    if not file_exists(sample_path) then
         reaper.ShowMessageBox("File not found:\n" .. sample_path, PLUGIN_NAME, 0)
         return
     end
