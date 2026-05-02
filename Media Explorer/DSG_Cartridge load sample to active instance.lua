@@ -1,7 +1,9 @@
 -- @description DSG_Cartridge load sample to active instance
 -- @author Alexandr Sakhnov
--- @version 1.3.0
+-- @version 1.3.1
 -- @changelog
+--   v1.3.1
+--   - Stop Media Explorer audition when replacing the sample (no more lingering preview)
 --   v1.3.0
 --   - Locate Media Explorer via reaper.OpenMediaExplorer (works on any REAPER locale)
 --   - Fix "File not found" when Media Explorer hides the file extension: scan folder by base name
@@ -172,6 +174,19 @@ local function triggerLoad(track, fx_idx, sample_path)
     end
 end
 
+-- Stop Media Explorer preview before replacing the sample.
+-- Action 1009 lives in the Media Explorer section (32063) and isn't reachable
+-- via Main_OnCommand; per Cockos forum, posting WM_COMMAND straight to the MX
+-- HWND is the canonical way and works without a defer() trick.
+local MX_STOP_ACTION_ID = 1009
+
+local function stopMediaExplorerPreview()
+    local hwnd = findMediaExplorer()
+    if hwnd then
+        reaper.JS_WindowMessage_Send(hwnd, "WM_COMMAND", MX_STOP_ACTION_ID, 0, 0, 0)
+    end
+end
+
 local function getMediaExplorerSelection(sample_path)
     if not reaper.MediaExplorerGetLastPlayedFileInfo then return nil, nil end
 
@@ -276,10 +291,13 @@ local function main()
         return
     end
 
+    -- Capture selection before stopping preview, then silence MX so it doesn't
+    -- keep auditioning while the sample swap happens.
+    local sel_start, sel_end = getMediaExplorerSelection(sample_path)
+    stopMediaExplorerPreview()
+
     triggerLoad(track, fx_idx, sample_path)
 
-    -- Apply Media Explorer preview selection as trim
-    local sel_start, sel_end = getMediaExplorerSelection(sample_path)
     applySelectionAsTrim(track, fx_idx, sel_start, sel_end)
 end
 
