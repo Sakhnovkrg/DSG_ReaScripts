@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="DSG ReaScripts" commit="6ccdb19a298650aad882b6a2c453af13e468857c">
+<index version="1" name="DSG ReaScripts" commit="b3b12bd70f6b3ba391dff0cbfd20962ea80f7ef4">
   <category name="Arm">
     <reapack name="DSG_Solo Arm.lua" type="script" desc="DSG_Solo Arm">
       <version name="1.0" author="DSG" time="2021-12-29T05:59:46Z">
@@ -148,6 +148,25 @@ v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/6ccdb19a298650aad882b6a2c453af13e468857c/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
       </version>
+      <version name="1.3.1" author="Alexandr Sakhnov" time="2026-05-02T19:03:49Z">
+        <changelog><![CDATA[v1.3.1
+- Stop Media Explorer audition when importing the sample (no more lingering preview)
+v1.3.0
+- Locate Media Explorer via reaper.OpenMediaExplorer (works on any REAPER locale)
+- Fix "File not found" when Media Explorer hides the file extension: scan folder by base name
+- Use reaper.file_exists for the existence check (replaces io.open probe)
+v1.2.1
+- Fixed Linux config path (~/.config instead of ~/.local)
+v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/b3b12bd70f6b3ba391dff0cbfd20962ea80f7ef4/Media%20Explorer/DSG_Cartridge%20create%20track%20from%20Media%20Explorer.lua</source>
+      </version>
     </reapack>
     <reapack name="DSG_Cartridge load sample to active instance.lua" type="script" desc="DSG_Cartridge load sample to active instance">
       <metadata>
@@ -221,6 +240,25 @@ v1.1.0
 v1.0.0
 - Initial release]]></changelog>
         <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/6ccdb19a298650aad882b6a2c453af13e468857c/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
+      </version>
+      <version name="1.3.1" author="Alexandr Sakhnov" time="2026-05-02T19:03:49Z">
+        <changelog><![CDATA[v1.3.1
+- Stop Media Explorer audition when replacing the sample (no more lingering preview)
+v1.3.0
+- Locate Media Explorer via reaper.OpenMediaExplorer (works on any REAPER locale)
+- Fix "File not found" when Media Explorer hides the file extension: scan folder by base name
+- Use reaper.file_exists for the existence check (replaces io.open probe)
+v1.2.1
+- Fixed Linux config path (~/.config instead of ~/.local)
+v1.2.0
+- Removed auto-copy to project folder (plugin now embeds sample data in state)
+v1.1.0
+- Apply Media Explorer preview selection as trim region
+- Improved database and search results path resolution
+- Localization support (Russian Media Explorer window name)
+v1.0.0
+- Initial release]]></changelog>
+        <source main="mediaexplorer">https://github.com/Sakhnovkrg/DSG_ReaScripts/raw/b3b12bd70f6b3ba391dff0cbfd20962ea80f7ef4/Media%20Explorer/DSG_Cartridge%20load%20sample%20to%20active%20instance.lua</source>
       </version>
     </reapack>
   </category>
